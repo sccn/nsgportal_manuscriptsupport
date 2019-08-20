@@ -1,4 +1,4 @@
-
+## Supporting files for manuscript: Bringing High-Performance Computing into EEGLAB: The Open EEGLAB Portal
 Supporting files (not data) for the manuscript: 
 
 **Bringing High-Performance Computing into EEGLAB: The Open EEGLAB Portal** by Ramon Martinez-Cancino, Dung Truong, Fiorenzo Artoni, Kenneth Kreutz-Delgado, Amitava Majumdar, Subhashini Sivagnanam, Kenneth Yoshimoto, Scott Makeig and Arnaud Delorme.(In preparation)
