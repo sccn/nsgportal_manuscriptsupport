@@ -7,7 +7,7 @@ EEG = pop_runica(EEG, 'icatype', 'runica');
 
 % Results
 % Plot first 40 IC maps obtained in previous step
-pop_topoplot(EEG, 0, [1:40] ,'EEG Data epochs',[8 5] ,0,'electrodes','on');
+pop_topoplot(EEG, 0, [1:20] ,'EEG Data epochs',[5 4] ,0,'electrodes','on');
 % Save figure
 print('-djpeg', 'IC_scalp_maps.jpg');
 % Save data with ICA decomposition
