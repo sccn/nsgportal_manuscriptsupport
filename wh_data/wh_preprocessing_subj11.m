@@ -21,27 +21,25 @@
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
           
 clear all; %
-path2data = fullfile(pwd,'whdata_subj11'); % Path to the files imported from the original data.
-path2save = fullfile(pwd,'whdata_subj11'); % Where to save EEGLAB files
+path2data = fullfile('/Volumes/ExtremeSSD/oep_manuscript_support/wh_data','whdata_subj11'); % Path to the files imported from the original data.
+path2save = fullfile('/Volumes/ExtremeSSD/oep_manuscript_support/wh_data','whdata_subj11'); % Where to save EEGLAB files
 
 dInfoS11; % load dataset information
 [ALLEEG, EEG] = eeglab; % start EEGLAB
     
 % Step 1: Load data previously imported
-EEG = pop_loadset('filename',  ['wh_' datInfoS11.name '_allruns.set'] , 'filepath', path2data);
+EEG = pop_loadset('filename', 'wh_sub011_run_1.set' , 'filepath', path2data);
 
 % Step 2: Selecting only EEG channels for analysis (61-64 are not EEG)
 EEG = pop_select(EEG, 'nochannel',61:64);
 
 % Step 3: Downsampling data to 500 Hz
-EEG = pop_resample(EEG, 500);
+EEG = pop_resample(EEG, 250);
 
 % Step 3: High-pass and notch filtering the data
 EEG = pop_eegfiltnew(EEG, 1,   0,   1650, 0, [], 0);  % High pass at 1Hz
-EEG = pop_eegfiltnew(EEG, 49,  51,  1650, 1, [], 0);  % Line noise suppression ~50Hz
-EEG = pop_eegfiltnew(EEG, 99,  101, 1650, 1, [], 0);  % Line noise suppression ~100Hz
-EEG = pop_eegfiltnew(EEG, 149, 151, 1650, 1, [], 0);  % Line noise suppression ~150Hz
-EEG = pop_eegfiltnew(EEG, 199, 201, 1650, 1, [], 0);  % Line noise suppression ~200Hz
+EEG = pop_eegfiltnew(EEG, 48,  52,  1650, 1, [], 0);  % Line noise suppression ~50Hz
+EEG = pop_eegfiltnew(EEG, 98,  102, 1650, 1, [], 0);  % Line noise suppression ~100Hz
 
 % Step 4: Apply Common Average Reference
 EEG = pop_reref(EEG,[]);
