@@ -8,12 +8,7 @@ Frontiers in Human Neuroscience, 5, 76, 1-16.
 Was obtained from the OpenNeuro project (https://www.openneuro.org). 
 Accession #: ds000117 
 
-Here in this example, only subject 11 is used.
+Here in this example, only the firts run from the data corresponding to subject 11 is used.
 
-The following files must be copied in this folder:
+The following file must be copied in this folder:
 sub-11_ses-meg_meg_sub-11_ses-meg_task-facerecognition_run-01_meg.fif	
-sub-11_ses-meg_meg_sub-11_ses-meg_task-facerecognition_run-02_meg.fif	
-sub-11_ses-meg_meg_sub-11_ses-meg_task-facerecognition_run-03_meg.fif	
-sub-11_ses-meg_meg_sub-11_ses-meg_task-facerecognition_run-04_meg.fif
-sub-11_ses-meg_meg_sub-11_ses-meg_task-facerecognition_run-05_meg.fif
-sub-11_ses-meg_meg_sub-11_ses-meg_task-facerecognition_run-06_meg.fif
