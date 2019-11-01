@@ -1,12 +1,13 @@
 % Launch EEGLAB
 eeglab; 
-% Load dataset wh_sub11_preproc.set
+% Load the sample EEGLAB dataset
 EEG = pop_loadset('wh_sub011_proc.set'); 
-% Decompose data into ICA using 'runica'
+% Decompose the data into independent component (IC) processes
 EEG = pop_runica(EEG, 'icatype', 'runica'); 
 
 % Results
-% Plot first 40 IC maps obtained in previous step
+% Plot the scalp maps of the first (and largest) 20 ICs
+
 pop_topoplot(EEG, 0, [1:20] ,'EEG Data epochs',[4 5] ,0,'electrodes','on');
 % Save figure
 print('-djpeg', 'IC_scalp_maps.jpg');
