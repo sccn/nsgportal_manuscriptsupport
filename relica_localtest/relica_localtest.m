@@ -14,7 +14,7 @@ eeglab
 EEG = pop_loadset('wh_sub011_proc.set'); 
 
 tic % Start timer
-EEG = pop_relica(EEG,100,'runica','point', 'relicaoutput'); % Running RELICA
+EEG = pop_relica(EEG, 100,'runica','point', 'relicaoutput', 'icaopt', {'extended', 1, 'pca', 69}); % Running RELICA
 elapsedtime = toc; % Elapsed time since timer started
 
 % Saving dataset
