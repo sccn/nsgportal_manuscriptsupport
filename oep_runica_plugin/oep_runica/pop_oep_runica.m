@@ -104,7 +104,7 @@ if nargin < 3 || isstruct(EEG)
         % in the script to be executed via NSG
         pop_saveset(EEG,'filename', EEG.filename, 'filepath', tmpJobPath);
         
-        % Cpying plug-in function to execute into the job folder.
+        % Copying plug-in function to execute into the job folder.
         % In some instances, a whole plug-in can be copied over.
         oeprunicafolder = mfilename('fullpath');
         oeprunicapath = fileparts(oeprunicafolder);
@@ -115,7 +115,7 @@ if nargin < 3 || isstruct(EEG)
         % Options defined by the user are written into the file
         
         % File writing begin ---
-        fid = fopen( fullfile(tmpJobPath,'oe_prunica_job.m'), 'w');
+        fid = fopen( fullfile(tmpJobPath,'oep_runica_job.m'), 'w');
         fprintf(fid, 'eeglab;\n');
         fprintf(fid, 'EEG = pop_loadset(''%s'');\n', EEG.filename);
         fprintf(fid, 'EEG = eeg_oep_runica(EEG);\n');
