@@ -11,3 +11,7 @@ pop_topoplot(EEG, 0, [1:20] ,'EEG Data epochs',[4 5] ,0,'electrodes','on');
 print('-djpeg', 'IC_scalp_maps.jpg');
 % Save the dataset, now including the ICA decomposition matrix
 pop_saveset(EEG, 'filename', 'wh_sub11_proc_output.set'); 
+
+% Optionally, delete the input dataset to reduce the output filesize
+delete('wh_sub011_proc.set');
+delete('wh_sub011_proc.fdt');
