@@ -92,7 +92,7 @@ if isstruct(EEG)
             
         %% Section 4: Submit job to NSG. Time requested for computation is half an hour      
         MAX_RUN_HOURS = 0.5;
-        pop_nsg('run',tmpJobPath,'filename', 'runicansg_job.m','jobid', jobID,'runtime', MAX_RUN_HOURS);
+        pop_nsg('run',tmpJobPath,'filename', 'runica_nsg_job.m','jobid', jobID,'runtime', MAX_RUN_HOURS);
         
         display([char(10) 'runica_nsg job (jobID: '''  jobID ''') has been submitted to NSG' char(10) ...
                           'Copy or keep in mind the jobID assigned to this job to retreive the results later on.' char(10)...
@@ -156,7 +156,7 @@ save(fullfile(tmpJobPath,'runicansg_input'),'runicansg_input');
 % -------------------------------------------------------------------------
 function runicansg_createjobscript(EEG,icamethod, tmpJobPath)
 
-fid = fopen( fullfile(tmpJobPath,'runicansg_job.m'), 'w');
+fid = fopen( fullfile(tmpJobPath,'runica_nsg_job.m'), 'w');
 fprintf(fid, 'eeglab;\n');
 fprintf(fid, 'EEG = pop_loadset(''%s'');\n', EEG.filename);
 fprintf(fid, 'EEG = eeg_runica_nsg(EEG, ''%s'');\n', icamethod);
